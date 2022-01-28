@@ -52,36 +52,10 @@ if [ -x "$(command -v picom)" ]; then
 fi
 ##############################################################################
 
-
-
-
-# [ WALLPAPERS ] #############################################################
-# - Comment/uncomment the option you prefer
-
-# 1) START - set random wallpapers -----------------------------------------+
+#set background
 if [ -x "$(command -v feh)" ]; then
-  feh --randomize --bg-fill "$SCRIPTPATH"/wallpapers/*
+  feh --bg-scale "$SCRIPTPATH/wallpaper.jpg"
 fi
-# END ----------------------------------------------------------------------+
-
-
-# 2) START - set ONE wallpaper for all displays ----------------------------+
-#if [ -x "$(command -v feh)" ]; then
-#  feh --bg-fill "$SCRIPTPATH"/wallpapers/atlas-ark-gruvbox-simple-lines.png
-#fi
-# END ----------------------------------------------------------------------+
-
-
-# 3) START - set MULTIPLE wallpapers for all displays ----------------------+
-# NOTE: the last image path DO NOT end with "\"
-#if [ -x "$(command -v feh)" ]; then
-#  feh --bg-fill \
-#  "$SCRIPTPATH"/wallpapers/blue_unicat.png \
-#  "$SCRIPTPATH"/wallpapers/pink_unicat.png
-#fi
-# END ----------------------------------------------------------------------+
-##############################################################################
-
 
 
 # [ START STATUSBAR ] #########################################################
