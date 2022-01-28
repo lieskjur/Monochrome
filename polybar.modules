@@ -1,0 +1,73 @@
+[module/date]
+type = internal/date
+date = %B %d %H:%M:%S
+date-alt = %H:%M:%S %d/%m/%Y
+;format-underline = ${colors.primary}
+
+[module/powermenu]
+type = custom/text
+content = "%{T2}襤%{T-}"
+content-padding = 0
+content-foreground = ${colors.foreground}
+content-background = ${colors.background}
+click-left = rofi -show power-menu -modi power-menu:$HOME/.config/leftwm/themes/current/rofi-power-menu.sh
+
+[module/brightnessctl]
+type = custom/script
+exec = brightnessctl | grep -o "(.*" | tr -d "()"
+scroll-up = brightnessctl set +5%
+scroll-down = brightnessctl set 5%-
+interval = 0.01
+tail = true
+label =  %output%
+label-foreground = ${colors.foreground}
+
+[module/pacman-updates]
+type = custom/script
+exec = num=`pacman -Qu | wc -l`; if [ $num -gt 0 ]; then echo "$num"; fi
+interval = 3600
+label = %output%
+format-prefix = "%{T2}%{T-} "
+
+[module/paru-updates]
+type = custom/script
+exec = num=`paru -Qu | wc -l`; if [ $num -gt 0 ]; then echo "$num"; fi
+interval = 3600
+label = %output%
+format-prefix = "%{T2}%{T-} "
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = %{T2}<ramp-volume>%{T-} <label-volume>
+label-volume = %percentage%%
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
+label-muted = %{T2}婢%{T-} muted
+label-muted-foreground = ${colors.foreground-alt}
+click-right = pavucontrol
+;format-volume-underline = ${colors.primary}
+;format-muted-underline = ${colors.primary}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+time-format = %H:%M
+poll-interval = 5
+
+format-charging =  <label-charging>
+;ramp-charging-foreground = ${colors.foreground}
+
+format-full = <ramp-capacity> <label-full> 
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%% - %time%
+
+
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
+;ramp-capacity-foreground = ${colors.foreground}
