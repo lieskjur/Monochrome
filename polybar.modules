@@ -20,7 +20,7 @@ label =  %output%
 [module/pacman-updates]
 type = custom/script
 exec = num=`pacman -Qu | wc -l`; if [ $num -gt 0 ]; then echo "$num"; fi
-interval = 3600
+interval = 900
 label = %output%
 format-prefix = "%{T2}%{T-} "
 
