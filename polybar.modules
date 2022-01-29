@@ -5,7 +5,7 @@ date-alt = %H:%M:%S %d/%m/%Y
 
 [module/powermenu]
 type = custom/text
-content = "%{T2}襤%{T-}"
+content = "%{T3}襤%{T-}"
 click-left = rofi -show power-menu -modi power-menu:$HOME/.config/leftwm/themes/current/rofi-power-menu.sh
 
 [module/brightnessctl]
@@ -15,30 +15,30 @@ scroll-up = brightnessctl set +5%
 scroll-down = brightnessctl set 5%-
 interval = 0.01
 tail = true
-label =  %output%
+label = %{T2}%{T-} %output%
 
 [module/pacman-updates]
 type = custom/script
 exec = num=`pacman -Qu | wc -l`; if [ $num -gt 0 ]; then echo "$num"; fi
 interval = 900
 label = %output%
-format-prefix = "%{T2}%{T-} "
+format-prefix = "%{T3}%{T-} "
 
 [module/paru-updates]
 type = custom/script
 exec = num=`paru -Qu | wc -l`; if [ $num -gt 0 ]; then echo "$num"; fi
 interval = 3600
 label = %output%
-format-prefix = "%{T2}%{T-} "
+format-prefix = "%{T3}%{T-} "
 
 [module/pulseaudio]
 type = internal/pulseaudio
-format-volume = %{T2}<ramp-volume>%{T-} <label-volume>
+format-volume = %{T3}<ramp-volume>%{T-} <label-volume>
 label-volume = %percentage%%
 ramp-volume-0 = 奄
 ramp-volume-1 = 奔
 ramp-volume-2 = 墳
-label-muted = %{T2}婢%{T-} muted
+label-muted = %{T3}婢%{T-} muted
 label-muted-foreground = ${colors.foreground-alt}
 click-right = pavucontrol
 
@@ -46,15 +46,15 @@ click-right = pavucontrol
 type = internal/battery
 battery = BAT0
 adapter = AC
-time-format = %H:%M
+time-format = %k
 poll-interval = 5
 
-format-charging =  <label-charging>
+format-charging = %{T2}%{T-} <label-charging>
 
 format-full = <ramp-capacity> <label-full> 
 
-format-discharging = <ramp-capacity> <label-discharging>
-label-discharging = %percentage%% - %time%
+format-discharging = %{T2}<ramp-capacity>%{T-} <label-discharging>
+label-discharging = %percentage%% -%time%h
 
 
 ramp-capacity-0 = " "

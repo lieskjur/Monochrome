@@ -2,19 +2,19 @@
 
 {% if tag.mine %}
 %{A1:leftwm-command "SendWorkspaceToTag {{workspace.index}} {{tag.index}}":}
-  
+%{T2}  %{T-}
 %{A}
 {% elsif tag.visible %}
 %{A1:leftwm-command "SendWorkspaceToTag {{workspace.index}} {{tag.index}}":}
-  
+%{T2}  %{T-}
 %{A}
 {% elsif tag.busy %}
 %{A1:leftwm-command "SendWorkspaceToTag {{workspace.index}} {{tag.index}}":}
- {{tag.name}} 
+%{T2} {{tag.name}} %{T-}
 %{A}
 {% else tag.visible %}
 %{A1:leftwm-command "SendWorkspaceToTag {{workspace.index}} {{tag.index}}":}
-%{F#75715e} {{tag.name}} %{F-}
+%{T2}%{F#75715e} {{tag.name}} %{F-}%{T-}
 %{A}
 {% endif %}
 
