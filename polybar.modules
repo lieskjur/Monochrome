@@ -12,13 +12,6 @@ content = 襤
 content-font = 3
 
 
-# [module/brightness]
-# type = custom/script
-# exec = brightnessctl | grep -o "(.*" | tr -d "()"
-# scroll-up = brightnessctl set +5%
-# interval = 0.01
-# tail = true
-
 [module/brightness]
 type = custom/ipc
 hook-0 = brightnessctl | grep -o "(.*" | tr -d "()"

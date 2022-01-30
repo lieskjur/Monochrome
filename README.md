@@ -11,8 +11,9 @@ A LeftWM + Polybar theme with a minimal palette of warm colors and a lot of gaps
 	- pulseaudio
 	- battery
 - custom [dependencies]
-	- script
+	- pci
 		- brightness [brightnessctl]
+	- script
 		- pacman-updates [pacman]
 		- paru-updates [paru]
 	- text
