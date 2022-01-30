@@ -3,59 +3,80 @@ type = internal/date
 date = %B %d %H:%M:%S
 date-alt = %H:%M:%S %d/%m/%Y
 
+
 [module/powermenu]
 type = custom/text
-content = "%{T3}襤%{T-}"
 click-left = rofi -show power-menu -modi power-menu:$HOME/.config/leftwm/themes/current/rofi-power-menu.sh
 
-[module/brightnessctl]
+content = 襤
+content-font = 3
+
+
+[module/brightness]
 type = custom/script
 exec = brightnessctl | grep -o "(.*" | tr -d "()"
 scroll-up = brightnessctl set +5%
 scroll-down = brightnessctl set 5%-
 interval = 0.01
 tail = true
-label = %{T2} %{T-}%output%
+
+label = %output%
+format-prefix = " "
+format-prefix-font = 2
+
 
 [module/pacman-updates]
 type = custom/script
 exec = num=`pacman -Qu | wc -l`; if [ $num -gt 0 ]; then echo "$num"; fi
-interval = 900
+interval = 60
 label = %output%
-format-prefix = "%{T2} %{T-}"
+format-prefix = " "
+format-prefix-font = 2
+
 
 [module/paru-updates]
 type = custom/script
 exec = num=`paru -Qu | wc -l`; if [ $num -gt 0 ]; then echo "$num"; fi
 interval = 3600
 label = %output%
-format-prefix = "%{T2} %{T-}"
+format-prefix = " "
+format-prefix-font = 2
+
 
 [module/pulseaudio]
 type = internal/pulseaudio
-format-volume = %{T3}<ramp-volume> %{T-}<label-volume>
+click-right = pavucontrol
+
 label-volume = %percentage%%
+format-volume = <ramp-volume> <label-volume>
 ramp-volume-0 = 奄
 ramp-volume-1 = 奔
 ramp-volume-2 = 墳
-label-muted = %{T3}婢 %{T-}muted
-label-muted-foreground = ${colors.foreground-alt}
-click-right = pavucontrol
+ramp-volume-font = 3
+
+label-muted = muted
+format-muted-prefix = "婢 "
+format-muted-prefix-font = 3
+format-muted-foreground = ${colors.foreground-alt}
+
 
 [module/battery]
 type = internal/battery
 battery = BAT0
 adapter = AC
-time-format = %k
+time-format = %k:%M
 poll-interval = 5
 
-format-charging = %{T2} %{T-}<label-charging>
+format-charging = <label-charging>
+format-charging-prefix = " "
+format-charging-prefix-font = 2
 
 format-full = <ramp-capacity> <label-full> 
 
-format-discharging = %{T2}<ramp-capacity> %{T-}<label-discharging>
-label-discharging = %percentage%% -%time%h
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%% -%time%
 
+ramp-capacity-font = 2
 ramp-capacity-0-foreground = ${colors.alert}
 ramp-capacity-0 = " "
 ramp-capacity-1 = " "
