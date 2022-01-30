@@ -15,30 +15,30 @@ scroll-up = brightnessctl set +5%
 scroll-down = brightnessctl set 5%-
 interval = 0.01
 tail = true
-label = %{T2}%{T-} %output%
+label = %{T2} %{T-}%output%
 
 [module/pacman-updates]
 type = custom/script
 exec = num=`pacman -Qu | wc -l`; if [ $num -gt 0 ]; then echo "$num"; fi
 interval = 900
 label = %output%
-format-prefix = "%{T3}%{T-} "
+format-prefix = "%{T2} %{T-}"
 
 [module/paru-updates]
 type = custom/script
 exec = num=`paru -Qu | wc -l`; if [ $num -gt 0 ]; then echo "$num"; fi
 interval = 3600
 label = %output%
-format-prefix = "%{T3}%{T-} "
+format-prefix = "%{T2} %{T-}"
 
 [module/pulseaudio]
 type = internal/pulseaudio
-format-volume = %{T3}<ramp-volume>%{T-} <label-volume>
+format-volume = %{T3}<ramp-volume> %{T-}<label-volume>
 label-volume = %percentage%%
 ramp-volume-0 = 奄
 ramp-volume-1 = 奔
 ramp-volume-2 = 墳
-label-muted = %{T3}婢%{T-} muted
+label-muted = %{T3}婢 %{T-}muted
 label-muted-foreground = ${colors.foreground-alt}
 click-right = pavucontrol
 
@@ -49,11 +49,11 @@ adapter = AC
 time-format = %k
 poll-interval = 5
 
-format-charging = %{T2}%{T-} <label-charging>
+format-charging = %{T2} %{T-}<label-charging>
 
 format-full = <ramp-capacity> <label-full> 
 
-format-discharging = %{T2}<ramp-capacity>%{T-} <label-discharging>
+format-discharging = %{T2}<ramp-capacity> %{T-}<label-discharging>
 label-discharging = %percentage%% -%time%h
 
 
