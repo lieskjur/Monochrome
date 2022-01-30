@@ -56,7 +56,7 @@ format-full = <ramp-capacity> <label-full>
 format-discharging = %{T2}<ramp-capacity> %{T-}<label-discharging>
 label-discharging = %percentage%% -%time%h
 
-
+ramp-capacity-0-foreground = ${colors.alert}
 ramp-capacity-0 = " "
 ramp-capacity-1 = " "
 ramp-capacity-2 = " "
