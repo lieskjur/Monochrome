@@ -1,8 +1,9 @@
 #!/bin/bash
 export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
-#set keyboard layout (should move elsewhere)
+# my specific start-up things
 setxkbmap -layout us,cz -variant ,ucw -option grp:caps_switch,grp:switch
+autorandr --change
 
 # set the theme.toml config
 echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
