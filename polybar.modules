@@ -12,36 +12,32 @@ content = 襤
 content-font = 3
 
 
+# [module/brightness]
+# type = custom/script
+# exec = brightnessctl | grep -o "(.*" | tr -d "()"
+# scroll-up = brightnessctl set +5%
+# interval = 0.01
+# tail = true
+
 [module/brightness]
-type = custom/script
-exec = brightnessctl | grep -o "(.*" | tr -d "()"
-scroll-up = brightnessctl set +5%
-scroll-down = brightnessctl set 5%-
-interval = 0.01
-tail = true
+type = custom/ipc
+hook-0 = brightnessctl | grep -o "(.*" | tr -d "()"
+scroll-up = brightnessctl set 5%+ & polybar-msg hook brightness 1
+scroll-down = brightnessctl set 5%- & polybar-msg hook brightness 1
+initial = 1
 
 label = %output%
 format-prefix = " "
 format-prefix-font = 2
 
 
-[module/pacman-updates]
+[module/checkupdates]
 type = custom/script
-exec = num=`pacman -Qu | wc -l`; if [ $num -gt 0 ]; then echo "$num"; fi
+exec = num=`checkupdates | wc -l`; if [ $num -gt 0 ]; then echo "$num"; fi
 interval = 60
 label = %output%
 format-prefix = " "
 format-prefix-font = 2
-
-
-[module/paru-updates]
-type = custom/script
-exec = num=`paru -Qu | wc -l`; if [ $num -gt 0 ]; then echo "$num"; fi
-interval = 3600
-label = %output%
-format-prefix = " "
-format-prefix-font = 2
-
 
 [module/pulseaudio]
 type = internal/pulseaudio
