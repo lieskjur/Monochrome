@@ -12,6 +12,12 @@ content = 襤
 content-font = 3
 
 
+[module/launcher]
+type = custom/text
+content = 
+click-left = rofi -show drun
+
+
 [module/brightness]
 type = custom/ipc
 hook-0 = brightnessctl | grep -o "(.*" | tr -d "()"
