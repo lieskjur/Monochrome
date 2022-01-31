@@ -3,6 +3,7 @@ export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 # my specific start-up things
 setxkbmap -layout us,cz -variant ,ucw -option grp:caps_switch,grp:switch &
+
 dunst -config $HOME/.config/leftwm/themes/current/dunstrc &
 
 # set the theme.toml config
