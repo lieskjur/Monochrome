@@ -10,7 +10,7 @@ fi
 echo "UnloadTheme" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
 
 # Kill procs
-pkill picom &
-pkill compton &
-pkill polybar &
 pkill dunst &
+# pkill picom &
+# pkill compton &
+pkill polybar &
