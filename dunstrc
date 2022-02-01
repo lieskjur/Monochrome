@@ -29,9 +29,9 @@
     # The maximum height of a single notification, excluding the frame.
     height = 300
 
-    # Notifications positioned 3 * (margin + workspace_margin) from bottom-right corner
+    # Notifications positioned 4 * (margin + workspace_margin) from bottom-right corner
     origin = bottom-right
-    offset = 72x72
+    offset = 64x64
 
     # Notifications positioned in the top right corner
     # and aligned with the window border
