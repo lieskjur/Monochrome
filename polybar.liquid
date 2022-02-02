@@ -1,23 +1,23 @@
 %{A1:rofi -show drun :}
-%{T2}  %{T-}
+%{T3}  %{T-}
 %{A}
 
 {% for tag in workspace.tags %}
 
 {% if tag.mine %}
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
-%{T2}  %{T-}
+%{T3}  %{T-}
 %{A}
 {% elsif tag.visible %}
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
-%{T2}  %{T-}
+%{T3}  %{T-}
 %{A}
 {% elsif tag.busy %}
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
-%{T2} {{tag.name}} %{T-}
+%{T3} {{tag.name}} %{T-}
 %{A}
 {% else tag.visible %}%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
-%{T2}%{F#75715e} {{tag.name}} %{F-}%{T-}
+%{T3}%{F#75715e} {{tag.name}} %{F-}%{T-}
 %{A}
 {% endif %}
 

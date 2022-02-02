@@ -9,7 +9,7 @@ type = custom/text
 click-left = rofi -show power-menu -modi power-menu:$HOME/.config/leftwm/themes/current/rofi-power-menu.sh
 
 content = 襤
-content-font = 3
+content-font = 2
 
 
 [module/launcher]
@@ -47,11 +47,11 @@ format-volume = <ramp-volume> <label-volume>
 ramp-volume-0 = 奄
 ramp-volume-1 = 奔
 ramp-volume-2 = 墳
-ramp-volume-font = 3
+ramp-volume-font = 2
 
 label-muted = muted
 format-muted-prefix = "婢 "
-format-muted-prefix-font = 3
+format-muted-prefix-font = 2
 format-muted-foreground = ${colors.foreground-alt}
 
 
