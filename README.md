@@ -20,6 +20,9 @@ Polybar modules are included in [polybar.modules]. By default only the date-time
 	- text
 		- powermenu [rofi]
 
+## Modification hints
+- `module-left` is drawn using the `polybar.liquid` module
+
 ## Themes that go well with Monochrome
 - My [Monokai Alacritty] theme
 
