@@ -4,20 +4,25 @@ export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 # my specific start-up things
 setxkbmap -layout us,cz -variant ,ucw -option grp:caps_switch,grp:switch &
 
-dunst -config $HOME/.config/leftwm/themes/current/dunstrc &
+# Boot dunst if it exists
+if [ -x "$(command -v dunst)" ]; then
+  dunst -config $HOME/.config/leftwm/themes/current/dunstrc &
+fi
 
 # set the theme.toml config
 echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
 
 # Boot picom or compton if it exists
-# if [ -x "$(command -v picom)" ]; then
-#     picom &> /dev/null &
-# elif [ -x "$(command -v compton)" ]; then
-#   compton &> /dev/null & 
-# fi
+if [ -x "$(command -v picom)" ]; then
+  picom &> /dev/null &
+elif [ -x "$(command -v compton)" ]; then
+  compton &> /dev/null & 
+fi
 
-#set background
-if [ -x "$(command -v feh)" ]; then
+# restore background using nitrogen or set default
+if [ -x "$(command -v nitrogen)" ]; then
+  nitrogen --restore &
+elif [ -x "$(command -v feh)" ]; then
   feh --bg-scale "$SCRIPTPATH/wallpaper.jpg" &
 fi
 
