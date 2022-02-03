@@ -29,15 +29,21 @@ Polybar modules are included in [polybar.modules]. By default only the date-time
 	- `font-1` a non-monospace nerd font for vertically scaled icons
 	- `font-2` a monospace nerd font for tags (horizontally scaled icons)
 
-## Themes that go well with Monochrome
-- My [Monokai Alacritty] theme
+## other configs that go well with Monochrome
+- My [Monokai] theme for Alacritty
+- [Picom config] I use
 
 ## Dependencies
-- LeftWM
-- Polybar
-- feh (draw wallpaper in [up])
-- Fira Code Nerd Font
-- Arimo Nerd Font
+- core
+	- LeftWM
+	- Polybar
+- default
+	- Fira Code Nerd Font
+	- Arimo Nerd Font
+- optional
+	- feh
+	- nitrogen
+	- dunst
 
 ## Installation
 
