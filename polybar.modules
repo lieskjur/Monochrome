@@ -8,13 +8,13 @@ date-alt = %H:%M:%S %d/%m/%Y
 type = custom/text
 click-left = rofi -show power-menu -modi power-menu:$HOME/.config/leftwm/themes/current/rofi-power-menu.sh
 
-content = 襤
+content = "襤"
 content-font = 2
 
 
 [module/launcher]
 type = custom/text
-content = 
+content = ""
 click-left = rofi -show drun
 
 
@@ -44,9 +44,9 @@ click-right = pavucontrol
 
 label-volume = %percentage%%
 format-volume = <ramp-volume> <label-volume>
-ramp-volume-0 = 奄
-ramp-volume-1 = 奔
-ramp-volume-2 = 墳
+ramp-volume-0 = "奄"
+ramp-volume-1 = "奔"
+ramp-volume-2 = "墳"
 ramp-volume-font = 2
 
 label-muted = muted
