@@ -1,7 +1,7 @@
 [module/date]
 type = internal/date
-date = %B %d %H:%M:%S
-date-alt = %H:%M:%S %d/%m/%Y
+date = %c
+date-alt = %F %T
 
 
 [module/powermenu]
