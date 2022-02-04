@@ -63,7 +63,7 @@ time-format = %k:%M
 poll-interval = 5
 
 format-charging = <label-charging>
-format-charging-prefix = " "
+format-charging-prefix = "%{T1} %{T-}"
 # format-charging-prefix = " "
 format-charging-prefix-font = 2
 
