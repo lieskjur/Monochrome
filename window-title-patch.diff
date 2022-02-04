@@ -1,0 +1,34 @@
+diff --git a/polybar.config b/polybar.config
+index bf3748a..1753204 100644
+--- a/polybar.config
++++ b/polybar.config
+@@ -29,10 +29,12 @@ alert = #f9246f
+ [bar/mainbar0]
+ inherit = bar/barbase
+ modules-left = workspace0
++modules-center = windowtitle0
+ 
+ [bar/mainbar1]
+ inherit = bar/barbase
+ modules-left = workspace1
++modules-center = windowtitle1
+ 
+ [bar/barbase]
+ width = 100%:-32
+@@ -72,6 +74,16 @@ type = custom/script
+ exec = leftwm-state -w 1 -t "$SCRIPTPATH/polybar.liquid"
+ tail = true
+ 
++[module/windowtitle0]
++type = custom/script
++exec = leftwm-state -w 0 -s "{{ window_title }}"
++tail = true
++
++[module/windowtitle1]
++type = custom/script
++exec = leftwm-state -w 1 -s "{{ window_title }}"
++tail = true
++
+ [settings]
+ screenchange-reload = true
+ ;compositing-background = xor
