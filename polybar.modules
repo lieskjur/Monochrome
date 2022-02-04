@@ -29,16 +29,6 @@ label = %output%
 format-prefix = " "
 format-prefix-font = 2
 
-
-[module/checkupdates]
-type = custom/script
-exec = num=`paru -Qu | wc -l`; if [ $num -gt 0 ]; then echo "$num"; fi
-click-left = alacritty -e --hold paru -Qu
-interval = 900
-label = %output%
-format-prefix = " "
-format-prefix-font = 2
-
 [module/pulseaudio]
 type = internal/pulseaudio
 click-right = pavucontrol
