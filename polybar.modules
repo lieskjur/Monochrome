@@ -32,8 +32,9 @@ format-prefix-font = 2
 
 [module/checkupdates]
 type = custom/script
-exec = num=`checkupdates | wc -l`; if [ $num -gt 0 ]; then echo "$num"; fi
-interval = 60
+exec = num=`paru -Qu | wc -l`; if [ $num -gt 0 ]; then echo "$num"; fi
+click-left = alacritty -e --hold paru -Qu
+interval = 900
 label = %output%
 format-prefix = " "
 format-prefix-font = 2
@@ -64,7 +65,6 @@ poll-interval = 5
 
 format-charging = <label-charging>
 format-charging-prefix = "%{T1} %{T-}"
-# format-charging-prefix = " "
 format-charging-prefix-font = 2
 
 format-full = <ramp-capacity> <label-full> 
@@ -80,6 +80,7 @@ ramp-capacity-2 = " "
 ramp-capacity-3 = " "
 ramp-capacity-4 = " "
 
+# format-charging-prefix = " "
 # ramp-capacity-0 = ""
 # ramp-capacity-1 = ""
 # ramp-capacity-2 = ""
