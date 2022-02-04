@@ -1,6 +1,6 @@
 [module/date]
 type = internal/date
-date = %c
+date = %a %e. %B, %T
 date-alt = %F %T
 
 
