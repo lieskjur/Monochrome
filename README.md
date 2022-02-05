@@ -3,7 +3,7 @@ A LeftWM + Polybar theme with a minimal palette of warm colors and a lot of gaps
 
 ## Features
 - All the gaps you could have ever wanted
-- Theme for Dunst notifications
+- Dunst and Rofi themes
 - Bars drawn on multiple workspaces
 - Separation of icon and text fonts (just like the church and state)
 - Polybar modules with minimal formatting
