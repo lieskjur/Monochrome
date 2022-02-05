@@ -7,10 +7,11 @@ if [ -x "$(command -v feh)" ]; then
   feh --bg-fill $SCRIPTPATH/down.jpg
 fi
 
-echo "UnloadTheme" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
+# echo "UnloadTheme" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
+leftwm-command "UnloadTheme"
 
 # Kill procs
-pkill dunst &
-pkill picom &
-pkill compton &
-pkill polybar &
+pkill dunst
+pkill picom
+pkill compton
+pkill polybar
