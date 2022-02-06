@@ -3,10 +3,11 @@ A LeftWM + Polybar theme with a minimal palette of warm colors and a lot of gaps
 
 ## Features
 - All the gaps you could have ever wanted
-- Dunst and Rofi themes
-- Bars drawn on multiple workspaces
+- [Dunst] and [Rofi] themes
+- Support for setting the wallpaper with [nitrogen]
+- Status bars drawn on multiple workspaces
 - Separation of icon and text fonts (just like the church and state)
-- Polybar modules with minimal formatting
+- [Polybar] modules with minimal formatting
 
 ## Included Polybar modules
 Polybar modules are included in [polybar.modules]. By default only the date-time module is applied with the option of adding more in [polybar.config]
@@ -25,9 +26,10 @@ Polybar modules are included in [polybar.modules]. By default only the date-time
 ## Modification hints
 - `module-left` is drawn using the `polybar.liquid` module
 - three separate fonts are used in the polybar
-	- `font-0` for text
-	- `font-1` a non-monospace nerd font for vertically scaled icons
-	- `font-2` a monospace nerd font for tags (horizontally scaled icons)
+	- `font-0` - text
+	- `font-1` - icons (nerd-font recommended)
+	- `font-2` - tags (monospace nerd-font recommended)
+- you can set your own wallpaper using [nitrogen] as `nitrogen --restore` is run while loading the theme if available.
 
 ## other configs that go well with Monochrome
 - My [Monokai] theme for Alacritty
