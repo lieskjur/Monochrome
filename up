@@ -34,12 +34,13 @@ elif [ -x "$(command -v feh)" ]; then
 fi
 
 # Boot polybar based on the number of monitors found
+pkill polybar &
 index=0
 monitor="$(polybar -m | grep +0+0 | sed s/:.*// | tac)"
 leftwm-state -q -n -t $SCRIPTPATH/sizes.liquid | sed -r '/^\s*$/d' | while read -r width x y
 do 
   barname="mainbar$index"
   monitor="$(polybar -m | awk -v i="$(( index + 1 ))" 'NR==i{print}' | sed s/:.*// | tr -d '\n')"
-  monitor=$monitor polybar -c "$SCRIPTPATH"/polybar.config $barname &
+  monitor=$monitor width=$(( width - 0 )) polybar -c "$SCRIPTPATH"/polybar.config $barname &
   let index=index+1
 done
