@@ -6,12 +6,12 @@
     red:                         rgba(220,50,47,100%);
     selected-active-foreground:  var(background);
     darkfg:                      #75715e;
-    separatorcolor:              var(lightbg);
+    separatorcolor:              var(highlight);
     urgent-foreground:           var(red);
     alternate-urgent-background: var(darkbg);
     darkbg:                      #181915;
     background-color:            transparent;
-    border-color:                var(highlight);
+    border-color:                var(lightbg);
     normal-background:           var(background);
     selected-urgent-background:  var(red);
     alternate-active-background: var(darkbg);
@@ -112,7 +112,7 @@ listview {
     border-color: var(separatorcolor);
     spacing:      2px ;
     fixed-height: 0;
-    border:       2px dash 0px 0px ;
+    border:       2px solid 0px 0px ;
 }
 scrollbar {
     width:        4px ;
