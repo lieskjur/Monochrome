@@ -16,7 +16,7 @@ leftwm-command "LoadTheme $SCRIPTPATH/theme.toml"
 
 # Boot dunst if it exists
 if [ -x "$(command -v dunst)" ]; then
-  dunst -config $HOME/.config/leftwm/themes/current/dunstrc &
+  dunst -config $SCRIPTPATH/dunstrc &
 fi
 
 # Boot picom or compton if it exists
@@ -41,6 +41,6 @@ leftwm-state -q -n -t $SCRIPTPATH/sizes.liquid | sed -r '/^\s*$/d' | while read 
 do 
   barname="mainbar$index"
   monitor="$(polybar -m | awk -v i="$(( index + 1 ))" 'NR==i{print}' | sed s/:.*// | tr -d '\n')"
-  monitor=$monitor width=$(( width - 0 )) polybar -c "$SCRIPTPATH"/polybar.config $barname &
+  monitor=$monitor width=$width polybar -c "$SCRIPTPATH"/polybar.config $barname &
   let index=index+1
 done
