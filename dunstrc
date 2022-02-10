@@ -31,7 +31,7 @@
 
     # Notifications positioned 4 * (margin + workspace_margin) from bottom-right corner
     origin = bottom-right
-    offset = 64x64
+    offset = 64x62
 
     # Notifications positioned in the top right corner
     # and aligned with the window border
