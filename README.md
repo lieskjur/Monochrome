@@ -2,8 +2,8 @@
 A LeftWM + Polybar theme with a minimal palette of warm colors and a lot of gaps, literal and figurative.
 
 ## Features
+- matching [Polybar], [Dunst] and [Rofi] themes
 - All the gaps you could have ever wanted
-- [Dunst] and [Rofi] themes
 - Support for setting the wallpaper with [nitrogen]
 - Status bars drawn on multiple workspaces
 - Separation of icon and text fonts (just like the church and state)

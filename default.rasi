@@ -112,7 +112,7 @@ listview {
     border-color: var(separatorcolor);
     spacing:      2px ;
     fixed-height: 0;
-    border:       2px solid 0px 0px ;
+    border:       3px solid 0px 0px ;
 }
 scrollbar {
     width:        4px ;
