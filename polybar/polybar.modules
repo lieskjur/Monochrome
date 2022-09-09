@@ -1,0 +1,71 @@
+[module/date]
+type = internal/date
+date = %a %e. %B, %T
+date-alt = %F %T
+
+
+[module/powermenu]
+type = custom/text
+click-left = rofi -show power-menu -modi power-menu:$HOME/.config/leftwm/themes/current/rofi/rofi-power-menu.sh
+
+content = "襤"
+content-font = 2
+
+
+[module/launcher]
+type = custom/text
+content = ""
+click-left = rofi -show drun
+
+
+[module/brightness]
+type = custom/ipc
+hook-0 = brightnessctl | grep -o "(.*" | tr -d "()"
+scroll-up = brightnessctl set 5%+ & polybar-msg hook brightness 1
+scroll-down = brightnessctl set 5%- & polybar-msg hook brightness 1
+initial = 1
+
+label = %output%
+format-prefix = " "
+format-prefix-font = 2
+
+[module/pulseaudio]
+type = internal/pulseaudio
+click-right = pavucontrol
+
+label-volume = %percentage%%
+format-volume = <ramp-volume> <label-volume>
+ramp-volume-0 = "奄"
+ramp-volume-1 = "奔"
+ramp-volume-2 = "墳"
+ramp-volume-font = 2
+
+label-muted = muted
+format-muted-prefix = "婢 "
+format-muted-prefix-font = 2
+format-muted-foreground = ${colors.foreground-alt}
+
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+time-format = %k:%M
+poll-interval = 5
+
+format-charging = <label-charging>
+format-charging-prefix = "%{T1} %{T-}"
+format-charging-prefix-font = 2
+
+format-full = <ramp-capacity> <label-full> 
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%% -%time%
+
+ramp-capacity-font = 2
+ramp-capacity-0-foreground = ${colors.alert}
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "

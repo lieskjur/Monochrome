@@ -1,0 +1,32 @@
+%{A1:rofi -show drun :}
+%{T3}  %{T-}
+%{A}
+
+{% for tag in workspace.tags %}
+
+%{T3}
+{% if tag.mine %}
+%{A1:$SCRIPTPATH/polybar/change_to_tag {{workspace.index}} {{tag.index}}:}
+  
+%{A}
+{% elsif tag.visible %}
+%{A1:$SCRIPTPATH/polybar/change_to_tag {{workspace.index}} {{tag.index}}:}
+  
+%{A}
+{% elsif tag.busy %}
+%{A1:$SCRIPTPATH/polybar/change_to_tag {{workspace.index}} {{tag.index}}:}
+ {{tag.name}} 
+%{A}
+{% else tag.visible %}
+%{A1:$SCRIPTPATH/polybar/change_to_tag {{workspace.index}} {{tag.index}}:}
+%{F#75715e} {{tag.name}} %{F-}
+%{A}
+{% endif %}
+%{T-}
+
+{% endfor %}
+
+%{A1:leftwm-command "NextLayout" :}
+%{A3:leftwm-command "PreviousLayout" :}
+  {{ workspace.layout }} 
+%{A}%{A}
