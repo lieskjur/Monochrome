@@ -25,7 +25,7 @@
     selected-active-background:  var(blue);
     active-background:           var(background);
     selected-normal-background:  var(lightbg);
-    // alternate-normal-background: var(darkbg);
+    alternate-normal-background: var(background);
     foreground:                  #FFFFFF;
     selected-urgent-foreground:  var(background);
     normal-foreground:           var(foreground);
